@@ -1,0 +1,93 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RNZApp" parent="Theme.Material3.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/rnz_primary</item>
+        <item name="colorPrimaryVariant">@color/rnz_primary_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        
+        <item name="colorSecondary">@color/rnz_accent</item>
+        <item name="colorSecondaryVariant">@color/rnz_accent_dark</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+        
+        <item name="android:colorBackground">@color/background_primary</item>
+        <item name="colorSurface">@color/background_card</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/text_white</item>
+        
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/rnz_primary_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    
+    <!-- Theme for Login Activity (No Action Bar) -->
+    <style name="Theme.RNZApp.NoActionBar" parent="Theme.RNZApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <!-- Button Styles -->
+    <style name="RNZButton" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+    
+    <style name="RNZButton.Secondary" parent="RNZButton">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="backgroundTint">@color/button_secondary</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    
+    <!-- Text Input Layout Styles -->
+    <style name="RNZTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/rnz_primary</item>
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+    
+    <!-- Card Styles -->
+    <style name="RNZCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/background_card</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- Text Styles -->
+    <style name="RNZTextAppearance.Headline" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="RNZTextAppearance.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="RNZTextAppearance.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    
+    <style name="RNZTextAppearance.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+    
+    <!-- Toolbar Style -->
+    <style name="RNZToolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/rnz_primary</item>
+        <item name="titleTextColor">@color/text_white</item>
+        <item name="android:theme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
+    </style>
+</resources>
