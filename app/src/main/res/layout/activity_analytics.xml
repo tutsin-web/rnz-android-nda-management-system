@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_secondary"
+    tools:context=".activities.AnalyticsActivity">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/RNZToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/analytics_header"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:menu="@menu/analytics_menu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Date Filter Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/RNZCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_by_date"
+                        android:textAppearance="@style/RNZTextAppearance.Title"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/RNZTextInputLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:hint="Start Date">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:focusable="false"
+                                android:clickable="true" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/RNZTextInputLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:hint="End Date">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etEndDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:focusable="false"
+                                android:clickable="true" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnApplyFilter"
+                        style="@style/RNZButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="12dp"
+                        android:text="Apply Filter" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Summary Stats Card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/RNZCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Summary"
+                        android:textAppearance="@style/RNZTextAppearance.Title"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvTotalSubmissions"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textAppearance="@style/RNZTextAppearance.Headline"
+                                android:textColor="@color/rnz_primary"
+                                tools:text="125" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_submissions"
+                                android:textAppearance="@style/RNZTextAppearance.Caption"
+                                android:layout_marginTop="4dp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/divider"
+                            android:layout_marginHorizontal="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvTopCountry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="N/A"
+                                android:textAppearance="@style/RNZTextAppearance.Body"
+                                android:textColor="@color/rnz_primary"
+                                android:textStyle="bold"
+                                tools:text="UAE" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Top Country"
+                                android:textAppearance="@style/RNZTextAppearance.Caption"
+                                android:layout_marginTop="4dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Submissions Over Time Chart -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/RNZCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/active_periods"
+                        android:textAppearance="@style/RNZTextAppearance.Title"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Top Countries Chart -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/RNZCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/top_countries"
+                        android:textAppearance="@style/RNZTextAppearance.Title"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Loading Overlay -->
+    <FrameLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlay_light"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/rounded_background"
+            android:padding="32dp">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/rnz_primary"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading"
+                android:textAppearance="@style/RNZTextAppearance.Body" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Error Overlay -->
+    <FrameLayout
+        android:id="@+id/layoutError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlay_light"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/rounded_background"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/analytics_load_error"
+                android:textAppearance="@style/RNZTextAppearance.Body"
+                android:textAlignment="center"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRetry"
+                style="@style/RNZButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
