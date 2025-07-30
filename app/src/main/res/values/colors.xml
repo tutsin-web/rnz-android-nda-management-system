@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- RNZ Brand Colors - Agriculture/Green Theme -->
+    <color name="rnz_primary">#4CAF50</color>
+    <color name="rnz_primary_dark">#388E3C</color>
+    <color name="rnz_primary_light">#C8E6C9</color>
+    <color name="rnz_accent">#8BC34A</color>
+    <color name="rnz_accent_dark">#689F38</color>
+    
+    <!-- Background Colors -->
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#F5F5F5</color>
+    <color name="background_card">#FFFFFF</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Divider and Border Colors -->
+    <color name="divider">#E0E0E0</color>
+    <color name="border">#CCCCCC</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#4CAF50</color>
+    <color name="button_primary_pressed">#388E3C</color>
+    <color name="button_secondary">#E0E0E0</color>
+    
+    <!-- Chart Colors for Analytics -->
+    <color name="chart_color_1">#4CAF50</color>
+    <color name="chart_color_2">#8BC34A</color>
+    <color name="chart_color_3">#CDDC39</color>
+    <color name="chart_color_4">#FFC107</color>
+    <color name="chart_color_5">#FF9800</color>
+    
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#80FFFFFF</color>
+</resources>
